@@ -1,23 +1,22 @@
-import PropTypes from "Prop-types";
+import React from "react";
+import PropTypes from "prop-types";
 
-const toy = ({brand, imageurl, name, type}) => {
+const Toy = (props) => {
+  let toy = props.data
   return (
     <div>
-      <h2>{brand}</h2>
+      <h2>{toy.brand}</h2>
       <section>
-        <p>{name}</p>
-        <p>{type}</p>
-        <img src={imageurl} alt={name}></img>
+        <p>{toy.name}</p>
+        <p>{toy.type}</p>
+        <img src={toy.imageurl} alt={toy.name} width="300" height="300"></img>
       </section>
     </div>
   );
 };
 
-toy.prototypes = {
-  brand: PropTypes.string,
-  name: PropTypes.string,
-  type: PropTypes.string,
-  imageurl: PropTypes.string,
+Toy.prototypes = {
+  data: PropTypes.object
 };
 
-export default toy;
+export default Toy;

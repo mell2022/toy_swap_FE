@@ -4,7 +4,6 @@ import User from "./User";
 
 const UsersList = (props) => {
   const users = props.users;
-  console.log("users", users)
   return (
     <div>
       {users.map((user) => (
@@ -23,8 +22,6 @@ const UsersList = (props) => {
     </div>
   );
 };
-// return requires an argument
-// return <div>{entries}</div>;
 
 UsersList.propTypes = {
   users: PropTypes.arrayOf(PropTypes.object)

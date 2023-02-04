@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Toy from "./Toy";
 
 const User = (props) => {
-  console.log("props", props);
   let user = props;
   return (
     <div>
@@ -10,15 +10,10 @@ const User = (props) => {
       <section>
         <p>{user.last}</p>
         <p>{user.email}</p>
-        {console.log("test", user.toys)}
-        {/* <p>{user.toys}</p> */}
         <div>
-          {user.toys.map((t) => (
-            <div key={t.name}>
-              <p>{t.name}</p>
-              <p>{t.brand}</p>
-              <p>{t.type}</p>
-              <img src={t.imageurl} alt={t.name} width="300" height="300"></img>
+          {user.toys.map((toy) => (
+            <div key={toy.name}>
+              <Toy data={toy}></Toy>
             </div>
           ))}
         </div>
@@ -32,7 +27,6 @@ User.propTypes = {
   last: PropTypes.string,
   email: PropTypes.string,
   toys: PropTypes.arrayOf(PropTypes.object),
-  // user: PropTypes.object
 };
 
 export default User;
