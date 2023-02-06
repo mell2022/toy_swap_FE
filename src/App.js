@@ -1,80 +1,61 @@
-// import logo from './logo.svg';
-// import "./App.css";
-// import { React, useEffect, useState } from "react";
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import axios from "axios";
-import ToyLists from "./components/ToyLists";
-import UsersList from "./components/UsersList";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import Login from "./pages/Login";
+import MyToys from "./pages/MyToys";
 
 function App() {
-  const [allUsers, setAllUsers] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
-  
-  const gettoysbyemail = (email) => {
-    const url = `https://toyswap.herokuapp.com/toys/${email}`;
-    axios
-      .get(url, {
-        params: {
-          q: email,
-          format: "json",
-        },
-      })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log("error!");
-      });
+  // const [allUsers, setAllUsers] = useState([]);
+  // const [errorMessage, setErrorMessage] = useState("");
 
-    return {};
-  };
+  // useEffect(() => {
+  //   axios
+  //     .get("https://toyswap.herokuapp.com/toys", {
+  //       params: {
+  //         format: "json",
+  //       },
+  //     })
+  //     .then((response) => {
+  //       // console.log("success in getting all toys!", response.data);
+  //       setAllUsers(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(`error in getting all toys! error message: ${error}`);
+  //     });
+  // }, []);
 
-  const getalltoys = () => {
-    axios
-      .get("https://toyswap.herokuapp.com/toys", {
-        params: {
-          format: "json",
-        },
-      })
-      .then((response) => {
-        console.log("success in getting all toys!", response.data);
-        return response.data;
-      })
-      .catch((error) => {
-        console.log(`error in getting all toys! error message: ${error}`);
-      });
-  };
-
-  useEffect(() => {
-    axios
-      .get("https://toyswap.herokuapp.com/toys", {
-        params: {
-          format: "json",
-        },
-      })
-      .then((response) => {
-        // console.log("success in getting all toys!", response.data);
-        setAllUsers(response.data);
-      })
-      .catch((error) => {
-        console.log(`error in getting all toys! error message: ${error}`);
-      });
-  }, []);
+  // return (
+  //   <div id="App">
+  //     <header>
+  //       <h1>Toy Swap</h1>
+  //       <section></section>
+  //     </header>
+  //     <main>
+  //       {console.log("yaaay2", allUsers)}
+  //       <UsersList users={allUsers}></UsersList>
+  //     </main>
+  //     <BrowserRouter>
+  //     <Routes>
+  //       {/* <Route path="/" element={<index />}></Route> */}
+  //       {/* <Route path="/user" element={<User />}></Route>
+  //       <Route path="/UsersList" element={<UsersList />}></Route> */}
+  //     </Routes>
+  //   </BrowserRouter>
+  //   </div>
+  // );
 
   return (
-    <div id="App">
-      <header>
-        <h1>Toy Swap</h1>
-        <section></section>
-      </header>
-      <main>
-        {console.log("yaaay2", allUsers)}
-        {/* Wave 01: Render one ChatEntry component
-        // Wave 02: Render ChatLog component */}
-        {/* <ChatLog entries={ChatData} updateMessage={updateLike}></ChatLog> */}
-        {/* <ToyLists></ToyLists> */}
-        <UsersList users={allUsers}></UsersList>
-      </main>
+    <div className="App">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />}></Route>
+          <Route path="/mytoys" element={<MyToys />}></Route>
+
+          {/* <Route path="/user" element={<User />}></Route>
+          <Route path="/userslist" element={<UsersList />}></Route> */}
+        </Routes>
+      </Router>
     </div>
   );
 }
