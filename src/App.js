@@ -4,6 +4,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Login from "./pages/Login";
 import MyToys from "./pages/MyToys";
+import SwapToys from "./pages/SwapToys";
 
 function App() {
   // const [allUsers, setAllUsers] = useState([]);
@@ -51,6 +52,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />}></Route>
           <Route path="/mytoys" element={<MyToys />}></Route>
+          <Route path="/swaptoys" element={<SwapToys />}></Route>
 
           {/* <Route path="/user" element={<User />}></Route>
           <Route path="/userslist" element={<UsersList />}></Route> */}

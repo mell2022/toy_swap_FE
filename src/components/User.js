@@ -8,7 +8,6 @@ const User = (props) => {
     return (
       <div>
         <h2>{user.first}</h2>
-  
         <section>
           <p>{user.last}</p>
           <p>{user.email}</p>
