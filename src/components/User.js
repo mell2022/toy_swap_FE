@@ -1,16 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Toy from "./Toy";
+import Typography from "@mui/material/Typography";
 
 const User = (props) => {
   let user = props;
-  if(user.toys){
+  if (user.toys) {
     return (
       <div>
-        <h2>{user.first}</h2>
+        <Typography variant="h5" component="div">
+          {user.first} {user.last}
+        </Typography>
         <section>
-          <p>{user.last}</p>
-          <p>{user.email}</p>
+          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+            {user.email}
+          </Typography>
           <div>
             {user.toys.map((toy) => (
               <div key={toy.name}>
@@ -21,16 +25,17 @@ const User = (props) => {
         </section>
       </div>
     );
-  }
-  else {
+  } else {
     return (
       <div>
         {console.log("testa", user)}
-        <h2>{user.first}</h2>
-  
+        <Typography variant="h5" component="div">
+          {user.first} {user.last}
+        </Typography>
         <section>
-          <p>{user.last}</p>
-          <p>{user.email}</p>
+          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+            {user.email}
+          </Typography>
           <div>
             {/* {user.toys.map((toy) => (
               <div>

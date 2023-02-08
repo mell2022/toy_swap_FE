@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Login from "./pages/Login";
 import MyToys from "./pages/MyToys";
 import SwapToys from "./pages/SwapToys";
+import Nav from "./components/Nav";
 
 function App() {
   // const [allUsers, setAllUsers] = useState([]);
@@ -48,6 +49,7 @@ function App() {
 
   return (
     <div className="App">
+      <Nav></Nav>
       <Router>
         <Routes>
           <Route path="/" element={<Login />}></Route>

@@ -3,6 +3,14 @@ import axios from "axios";
 import User from "../components/User";
 import Toy from "../components/Toy";
 import { Link, useNavigate } from "react-router-dom";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import { css } from "@emotion/react";
+import Grid from "@mui/material/Grid";
 
 function MyToys() {
   const [userInfo, setUserInfo] = useState({});
@@ -39,27 +47,41 @@ function MyToys() {
 
   if (userInfo.toys) {
     return (
-      <div>
-        <User
-          first={userInfo.first}
-          last={userInfo.last}
-          email={userInfo.email}
-          //toys={userInfo.toys}
-        ></User>
-        <div>
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Card sx={{ minWidth: 275 }}>
+              <CardContent>
+                <User
+                  first={userInfo.first}
+                  last={userInfo.last}
+                  email={userInfo.email}
+                  //toys={userInfo.toys}
+                ></User>
+              </CardContent>
+            </Card>
+          </Grid>
           {userInfo.toys.map((toy) => (
-            <div key={toy.name}>
-              <Toy data={toy}></Toy>
-              {/* <button type="submit" onClick={(e) => handleSubmit(toy, e)}>
+            <Grid item xs={4}>
+              <Card sx={{ minWidth: 275 }}>
+                <CardContent key={toy.name}>
+                  <Toy data={toy}></Toy>
+                  {/* <button type="submit" onClick={(e) => handleSubmit(toy, e)}>
                 Swap
               </button> */}
-              <Link onClick={(e) => handleSubmit(toy, e)} to="/swaptoys">
-                Choose
-              </Link>
-            </div>
+                  <Button
+                    variant="contained"
+                    onClick={(e) => handleSubmit(toy, e)}
+                    to="/swaptoys"
+                  >
+                    Choose
+                  </Button>
+                </CardContent>
+              </Card>
+            </Grid>
           ))}
-        </div>
-      </div>
+        </Grid>
+      </Box>
     );
   } else {
     return (
