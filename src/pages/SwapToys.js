@@ -10,6 +10,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { css } from "@emotion/react";
+import Grid from "@mui/material/Grid";
 
 const SwapToys = (props) => {
   const [allToys, setAllToys] = useState([]);
@@ -85,18 +86,17 @@ const SwapToys = (props) => {
   console.log("other toys", otherToys);
 
   return (
-    <div>
+    <Grid
+    container
+    justifyContent="center"
+    alignItems="stretch"
+  >
       {otherToys.map((toy) => (
-        <Box
-          component="span"
-          sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-        >
-          <Card sx={{ minWidth: 275 }}>
+        <Box sx={{ m:2, alignContent: 'flex-start'}}>
+          <Grid item xs={4} alignItems="left">
+          <Card sx={{ minWidth: 275, maxwidth: 250, minHeight: 375}}>
             <CardContent key={toy.name}>
               <Toy data={toy}></Toy>
-              {/* <button type="submit" onClick={(e) => handleSubmit(toy, e)}>
-            Swap
-          </button> */}
               <Button
                 variant="text"
                 onClick={(e) => handleSubmit(toy, e)}
@@ -106,9 +106,10 @@ const SwapToys = (props) => {
               </Button>
             </CardContent>
           </Card>
+          </Grid> 
         </Box>
       ))}
-    </div>
+      </Grid> 
   );
 };
 SwapToys.prototypes = {

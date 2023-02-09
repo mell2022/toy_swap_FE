@@ -47,30 +47,39 @@ function MyToys() {
 
   if (userInfo.toys) {
     return (
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <Card sx={{ minWidth: 275 }}>
-              <CardContent>
-                <User
-                  first={userInfo.first}
-                  last={userInfo.last}
-                  email={userInfo.email}
-                  //toys={userInfo.toys}
-                ></User>
-              </CardContent>
-            </Card>
-          </Grid>
+      // <Box sx={{ flexGrow: 1 }}>
+        // <Grid
+        //   container
+        //   spacing={6}
+        //   justifyContent="flex-start"
+        //   alignItems="flex-start"
+        // >
+        <Grid
+        container
+        justifyContent="flex-start"
+        alignItems="flex-start"
+      >
+          {/* <Grid item xs={12} alignItems="left">
+            <User
+              first={userInfo.first}
+              last={userInfo.last}
+              email={userInfo.email}
+              //toys={userInfo.toys}
+            ></User>
+          </Grid> */}
           {userInfo.toys.map((toy) => (
-            <Grid item xs={4}>
-              <Card sx={{ minWidth: 275 }}>
+            <Box sx={{m:2, alignContent:'flex-start'}}>
+            <Grid item xs={4} alignItems="left">
+            <Card sx={{ minWidth: 275, maxwidth: 250, minHeight: 375}}>
+            {/* // <Grid item xs={4} key={toy.name}>
+            //   <Card sx={{ minWidth: 275, maxwidth: 250 }}> */}
                 <CardContent key={toy.name}>
                   <Toy data={toy}></Toy>
                   {/* <button type="submit" onClick={(e) => handleSubmit(toy, e)}>
                 Swap
               </button> */}
                   <Button
-                    variant="contained"
+                    variant="text"
                     onClick={(e) => handleSubmit(toy, e)}
                     to="/swaptoys"
                   >
@@ -79,9 +88,10 @@ function MyToys() {
                 </CardContent>
               </Card>
             </Grid>
+            </Box>
           ))}
         </Grid>
-      </Box>
+      // </Box>
     );
   } else {
     return (

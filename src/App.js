@@ -1,11 +1,18 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  NavLink,
+  Route,
+  Routes,
+} from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Login from "./pages/Login";
 import MyToys from "./pages/MyToys";
 import SwapToys from "./pages/SwapToys";
 import Nav from "./components/Nav";
+import { BrowserRouter } from "react-router-dom";
+import NavTabs from "./components/NavTabs";
 
 function App() {
   // const [allUsers, setAllUsers] = useState([]);
@@ -49,8 +56,8 @@ function App() {
 
   return (
     <div className="App">
-      <Nav></Nav>
       <Router>
+      <NavTabs></NavTabs>
         <Routes>
           <Route path="/" element={<Login />}></Route>
           <Route path="/mytoys" element={<MyToys />}></Route>

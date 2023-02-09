@@ -1,16 +1,46 @@
 import * as React from "react";
-import Link from "@mui/material/Link";
-import Box from "@mui/material/Box";
-import { Button } from "@mui/material";
+import Grid from "@mui/material/Grid";
+import { NavLink } from "react-router-dom";
 
-export default function LinkDemo() {
+export default function NavList() {
+  // This styling will be applied to a <NavLink> when the
+  // route that it links to is currently selected.
+
+  let activeStyle = {
+    textDecoration: "underline",
+  };
+
+  let activeClassName = "underline";
+
   return (
-    <Box sx={{ typography: "h6" }}>
-      <Button variant="text">text</Button>
-      <Button variant="text">Login</Button>
-      <Button variant="text">SwapToys</Button>
-    </Box>
+    <nav>
+      <ul>
+        <li>
+          <NavLink
+            to="messages"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            Messages
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="tasks"
+            className={({ isActive }) =>
+              isActive ? activeClassName : undefined
+            }
+          ></NavLink>
+        </li>
+        <li>
+          <NavLink to="tasks">
+            {({ isActive }) => (
+              <span className={isActive ? activeClassName : undefined}>
+                Tasks
+              </span>
+            )}
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
   );
 }
-// href="/">Login</Link>
-// href="/swaptoys">SwapToys</Link>

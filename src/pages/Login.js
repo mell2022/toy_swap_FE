@@ -5,6 +5,9 @@ const Login = () => {
   const [UnameOrEmail, setUnameOrEmail] = useState("");
   const [password, setpassword] = useState("");
   const [authenticatedEmail, setAuthenticatedEmail] = useState("")
+  const [authenticatedUser, setAuthenticatedUser] = useState("")
+
+  
   const navigate = useNavigate()
 
   const user = {
@@ -17,7 +20,11 @@ const Login = () => {
     // TODO: Implement google login logic
     // For now we assume it works and we get the email back
     localStorage.setItem("authenticatedEmail", "john@gmail.com");
+    localStorage.setItem("authenticatedUser", "John Bk");
+
     setAuthenticatedEmail("john@gmail.com");
+    setAuthenticatedUser("John Bk");
+
     navigate("/mytoys");
   
 
