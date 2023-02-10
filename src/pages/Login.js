@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { TextField, Box, Button, Grid } from "@mui/material";
 // import ImageList from '@mui/material/ImageList';
 // import ImageListItem from '@mui/material/ImageListItem';
 // import Image from './images/toystack.jpeg';
+import Image2 from "../images/IMG_1863.jpeg";
 
 const Login = () => {
   const [UnameOrEmail, setUnameOrEmail] = useState("");
@@ -28,6 +30,8 @@ const Login = () => {
     setAuthenticatedUser("Kailee Wintheiser");
 
     navigate("/mytoys");
+    console.log("UnameOrEmail:", UnameOrEmail);
+    console.log("password:", password);
 
     if (UnameOrEmail === user.email || UnameOrEmail === user.username) {
       if (password === user.password) {
@@ -40,35 +44,40 @@ const Login = () => {
     }
   };
   return (
-    <div>
-      <form onSubmit={handlesubmit}>
-        <div className="form-group">
-          <label htmlFor="Email or UserName">Email or username</label>
-          <input
-            type="text"
-            placeholder="email or username"
-            required
-            value="kailee.wintheiser@f3qesh.com"
-            // value={UnameOrEmail}
+    <Grid container justifyContent="flex-end" alignItems="center" height="100%">
+      <Grid item xs={12}>
+        <img src={Image2} alt="ToySwap, the greatest tool ever." width={400} />
+      </Grid>
+      <Grid item xs={12}>
+        <Box
+          component="form"
+          sx={{
+            "& > :not(style)": { m: 1, width: "25ch" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField
+            id="username"
+            label="Email or Username"
+            variant="standard"
             onChange={(e) => setUnameOrEmail(e.target.value)}
-            className="Input"
           />
-        </div>
-        <div className="form-group">
-          <label htmlFor="Password">Password</label>
-          <input
-            type="Password"
-            placeholder="Password"
-            required
-            value="pass"
-            // value={password}
+          <TextField
+            id="password"
+            label="Password"
+            variant="standard"
             onChange={(e) => setpassword(e.target.value)}
-            className="Input"
+            type="password"
           />
-        </div>
-        <button type="submit">Log in</button>
-      </form>
-    </div>
+        </Box>
+      </Grid>
+      <Grid item xs={12}>
+        <Button variant="contained" onClick={handlesubmit}>
+          Log in
+        </Button>
+      </Grid>
+    </Grid>
   );
 };
 export default Login;
