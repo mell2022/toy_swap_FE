@@ -101,6 +101,7 @@ function MyToys() {
           last={userInfo.last}
           email={userInfo.email}
           toys={userInfo.toys}
+          
         ></User>
       </div>
     );
