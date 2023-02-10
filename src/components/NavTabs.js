@@ -49,8 +49,6 @@ export default function BasicTabs() {
   const handleChange = (event, newValue) => {
     console.log("handleChange", newValue, event);
     event.preventDefault();
-    // TODO: Implement google login logic
-    // For now we assume it works and we get the email back
     if (newValue === 0) {
       console.log("Home");
       navigate("/");
@@ -58,10 +56,10 @@ export default function BasicTabs() {
       console.log("mytoys");
 
       navigate("/mytoys");
-      // } else if (newValue === 2) {
-      //   console.log("swaptoys");
+      } else if (newValue === 2) {
+        console.log("swaptoys");
 
-      //   navigate("/swaptoys");
+        navigate("/swaptoys");
     }
 
     setValue(newValue);
@@ -79,12 +77,12 @@ export default function BasicTabs() {
         >
           <Tab label="Login" {...a11yProps(0)}></Tab>
           <Tab label="My Toys" {...a11yProps(1)} />
-          {/* <Tab label="Item Three" {...a11yProps(2)} /> */}
+          <Tab label="Swap Toys" {...a11yProps(2)} />
         </Tabs>
         </Box>
         <Box sx={{ alignContent: 'flex-end', justifyContent: 'flex-end', flexGrow: 1, flexDirection: 'row-reverse', gridColumn: '5' }}>
         <Typography sx={{ m:[-1,0,-1,0]}} variant="button" gutterBottom>
-          {"John Bk"}
+          {user}
         </Typography>
         <Typography sx={{ m:[-1,0,-1,0]}} variant="subtitle2" gutterBottom>
           {email}

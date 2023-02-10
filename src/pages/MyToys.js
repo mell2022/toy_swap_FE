@@ -70,7 +70,7 @@ function MyToys() {
           {userInfo.toys.map((toy) => (
             <Box sx={{m:2, alignContent:'flex-start'}}>
             <Grid item xs={4} alignItems="left">
-            <Card sx={{ minWidth: 275, maxwidth: 250, minHeight: 375}}>
+            <Card sx={{ minWidth: 275, maxwidth: 250, minHeight: 275}}>
             {/* // <Grid item xs={4} key={toy.name}>
             //   <Card sx={{ minWidth: 275, maxwidth: 250 }}> */}
                 <CardContent key={toy.name}>

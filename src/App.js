@@ -13,6 +13,8 @@ import SwapToys from "./pages/SwapToys";
 import Nav from "./components/Nav";
 import { BrowserRouter } from "react-router-dom";
 import NavTabs from "./components/NavTabs";
+// import images from "./images/Toystack.jpeg";
+// import "./App.css";
 
 function App() {
   // const [allUsers, setAllUsers] = useState([]);
@@ -56,8 +58,9 @@ function App() {
 
   return (
     <div className="App">
+      {/* <div> className="bg"</div> */}
       <Router>
-      <NavTabs></NavTabs>
+        <NavTabs></NavTabs>
         <Routes>
           <Route path="/" element={<Login />}></Route>
           <Route path="/mytoys" element={<MyToys />}></Route>

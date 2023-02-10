@@ -38,50 +38,39 @@ const SwapToys = (props) => {
   }, []);
 
   const location = useLocation();
-  const myToyToSwap = location.state.toy;
-  console.log("my toy to swap:", myToyToSwap);
 
   let navigate = useNavigate();
   const handleSubmit = (toy, e) => {
     e.preventDefault();
+    const myToyToSwap = location.state.toy;
+    console.log("my toy to swap:", myToyToSwap);
+  
     let theirToyToSwap = toy;
+    console.log("their toy to swap:", theirToyToSwap);
+
 
     // We call the swap API between myToyToSwap and theirToyToSwap
 
-    //   axios
-    //     .post(`https://toyswap.herokuapp.com/toys/swap/`, {
-    //       params: {
-    //         format: "json",
-    //       },
-    //     })
-    //     .then((response) => {
-    //       console.log("success in getting userInfo!", response.data);
-    //       setAllToys(response.data);
-    //     })
-    //     .catch((error) => {
-    //       console.log(`error in getting all toys! error message: ${error}`);
-    //     });
-    // }, []);
-
+  let url = `https://toyswap.herokuapp.com/toys/swap/${email}/${myToyToSwap.name}/${theirToyToSwap.owner_email}/${theirToyToSwap.name}`
     axios
-      .get(`https://toyswap.herokuapp.com/toys/all`, {
+      .post(url, {
         params: {
           format: "json",
         },
       })
       .then((response) => {
-        console.log("success in getting userInfo!", response.data);
+        console.log("success in getting swapped!", response.data);
         // setAllToys(response.data);
         // Swap has succeeded so we navigate somewhere
       })
       .catch((error) => {
-        console.log(`error in getting all toys! error message: ${error}`);
+        console.log(`error in swapping toys! error message: ${error}`);
       });
 
-    console.log("their toy to swap:", theirToyToSwap);
   };
 
   // Filter all toys to hide toys I own
+  console.log("alltoys", allToys)
   let otherToys = allToys.filter((toy) => toy.owner_email !== email);
   console.log("other toys", otherToys);
 
@@ -94,7 +83,7 @@ const SwapToys = (props) => {
       {otherToys.map((toy) => (
         <Box sx={{ m:2, alignContent: 'flex-start'}}>
           <Grid item xs={4} alignItems="left">
-          <Card sx={{ minWidth: 275, maxwidth: 250, minHeight: 375}}>
+          <Card sx={{ minWidth: 275, maxwidth: 250, minHeight: 300}}>
             <CardContent key={toy.name}>
               <Toy data={toy}></Toy>
               <Button

@@ -28,11 +28,8 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+  /* }
+.login {
+  background-image: url(https://media.istockphoto.com/id/855763316/photo/huge-pile-of-toys.jpg?s=1024x1024&w=is&k=20&c=_P7DyX4Y1JDz-rVBFnOZAuo24VEOOsa3xNvoxa9pm68=);
+} */
