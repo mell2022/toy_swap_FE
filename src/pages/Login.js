@@ -11,6 +11,8 @@ const Login = () => {
   const [password, setpassword] = useState("");
   const [authenticatedEmail, setAuthenticatedEmail] = useState("");
   const [authenticatedUser, setAuthenticatedUser] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  console.log("isLoggedIn", isLoggedIn)
 
   const navigate = useNavigate();
 
@@ -25,9 +27,13 @@ const Login = () => {
     // For now we assume it works and we get the email back
     localStorage.setItem("authenticatedEmail", "kailee.wintheiser@f3qesh.com");
     localStorage.setItem("authenticatedUser", "Kailee Wintheiser");
+    localStorage.setItem("isLoggedIn", true)
 
     setAuthenticatedEmail("kailee.wintheiser@f3qesh.com");
     setAuthenticatedUser("Kailee Wintheiser");
+    setIsLoggedIn(true)
+    console.log("isLoggedIn", isLoggedIn)
+
 
     navigate("/mytoys");
     console.log("UnameOrEmail:", UnameOrEmail);
@@ -61,13 +67,13 @@ const Login = () => {
             id="username"
             label="Email or Username"
             variant="standard"
-            onChange={(e) => setUnameOrEmail(e.target.value)}
+            // onChange={(e) => setUnameOrEmail(e.target.value)}
           />
           <TextField
             id="password"
             label="Password"
             variant="standard"
-            onChange={(e) => setpassword(e.target.value)}
+            // onChange={(e) => setpassword(e.target.value)}
             type="password"
           />
         </Box>

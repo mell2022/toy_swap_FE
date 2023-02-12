@@ -10,9 +10,11 @@ import { useState, useEffect } from "react";
 import Login from "./pages/Login";
 import MyToys from "./pages/MyToys";
 import SwapToys from "./pages/SwapToys";
+import About from "./pages/About";
 import Nav from "./components/Nav";
 import { BrowserRouter } from "react-router-dom";
 import NavTabs from "./components/NavTabs";
+import { BottomNavigation } from "@mui/material";
 // import images from "./images/Toystack.jpeg";
 // import "./App.css";
 
@@ -65,11 +67,15 @@ function App() {
           <Route path="/" element={<Login />}></Route>
           <Route path="/mytoys" element={<MyToys />}></Route>
           <Route path="/swaptoys" element={<SwapToys />}></Route>
+          <Route path="/about" element={<About />}></Route>
 
           {/* <Route path="/user" element={<User />}></Route>
           <Route path="/userslist" element={<UsersList />}></Route> */}
         </Routes>
       </Router>
+      <BottomNavigation>
+        {/* <footer class="page-footer">Sticky footer</footer> */}
+      </BottomNavigation>
     </div>
   );
 }

@@ -20,6 +20,7 @@ function MyToys() {
 
   let email = localStorage.getItem("authenticatedEmail");
   console.log("From local Storage:", email);
+  console.log("isLoggedIn", localStorage.getItem("isLoggedIn"));
 
   console.log("From state", authenticatedEmail);
 
@@ -101,7 +102,7 @@ function MyToys() {
           last={userInfo.last}
           email={userInfo.email}
           toys={userInfo.toys}
-          
+
         ></User>
       </div>
     );

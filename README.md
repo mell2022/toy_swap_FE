@@ -68,3 +68,27 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+Overview
+
+Users will swap used/new toys they already have with other parents.
+This app uses Flask API. The user will log in using Google Sign in and be able to swap based on their interest and need.
+This app is created as a capstone project for Ada Developer Academy. 
+
+Dependencies:
+
+    Used React for the front end
+    Flask for the flask for the backend
+    Google Firebase for the backend 
+
+Installation:
+    Clone this repository
+    Install dependencies by running yarn install
+    Start server by runing yarn start
+
+
+Install 
+
+
+  
