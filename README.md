@@ -1,4 +1,28 @@
-# Getting Started with Create React App
+
+# Overview
+
+Users will swap used/new toys they already have with other parents.
+This app uses Flask API. Users will log in using Google Sign in and be able to swap based on their interest and need.
+This app is created as a capstone project for Ada Developer Academy. 
+
+## Dependencies:
+
+    Used React for the front end
+    Flask for the flask for the backend
+    Google Firebase for the backend 
+
+## Installation:
+    Clone this repository
+    Install dependencies by running yarn install
+    Start server by runing yarn start
+
+<details>
+<summary>
+More technical details
+</summary>
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -70,25 +94,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
-Overview
 
-Users will swap used/new toys they already have with other parents.
-This app uses Flask API. The user will log in using Google Sign in and be able to swap based on their interest and need.
-This app is created as a capstone project for Ada Developer Academy. 
-
-Dependencies:
-
-    Used React for the front end
-    Flask for the flask for the backend
-    Google Firebase for the backend 
-
-Installation:
-    Clone this repository
-    Install dependencies by running yarn install
-    Start server by runing yarn start
+</details>
 
 
-Install 
+
+
 
 
   

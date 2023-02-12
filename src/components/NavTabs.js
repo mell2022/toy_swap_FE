@@ -1,10 +1,9 @@
-import * as React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Link from "@mui/material/Link";
 import { useNavigate } from "react-router-dom";
 
 function TabPanel(props) {
@@ -31,6 +30,7 @@ TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 function a11yProps(index) {
@@ -48,30 +48,28 @@ export default function BasicTabs() {
   const navigate = useNavigate();
   let email = localStorage.getItem("authenticatedEmail");
   let user = localStorage.getItem("authenticatedUser");
-  console.log(isLoggedIn);
 
   const handleChange = (event, newValue) => {
     console.log("handleChange", newValue, event);
     event.preventDefault();
     if (newValue === 0) {
-      console.log("Home");
+      setIsLoggedIn(false);
       navigate("/");
     } else if (newValue === 1) {
-      console.log("mytoys");
-
+      setIsLoggedIn(localStorage.getItem("isLoggedIn"));
       navigate("/mytoys");
     } else if (newValue === 2) {
-      console.log("swaptoys");
+      setIsLoggedIn(localStorage.getItem("isLoggedIn"));
       navigate("/swaptoys");
     } else if (newValue === 3) {
-      console.log("about");
+      setIsLoggedIn(localStorage.getItem("isLoggedIn"));
       navigate("/about");
     } else if (newValue === 4) {
       console.log("logout");
       // log the user out of the database and set the flag
       setIsLoggedIn(false);
       localStorage.setItem("isLoggedIn", false);
-      navigate("/");
+      navigate("/logout");
     }
 
     setValue(newValue);
@@ -92,7 +90,7 @@ export default function BasicTabs() {
           sx={{
             alignContent: "flex-start",
             justifyContent: "flex-start",
-            gridColumn: "1",
+            gridColumn: "span 3",
           }}
         >
           <Tabs
