@@ -1,14 +1,14 @@
 
 # Overview
 
-Users will swap used/new toys they already have with other parents.
+Toy swap is a web application that allows a user to swap used/new toys they already have with other parents.
 This app uses Flask API. Users will log in using Google Sign in and be able to swap based on their interest and need.
 This app is created as a capstone project for Ada Developer Academy. 
 
 ## Dependencies:
 
     Used React for the front end
-    Flask for the flask for the backend
+    Integrated with Flask API for the backend
     Google Firebase for the backend 
 
 ## Installation:

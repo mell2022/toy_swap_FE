@@ -31,7 +31,7 @@ function App() {
         </Routes>
       </Router>
       <BottomNavigation sx={{bottom:0 , alignContent:'center'}} style={{position:"fixed", bottom:0, textAlign:'center',  left:"50%" }}>
-        <footer class="page-footer">@2023 ToySwap Inc. </footer>
+        <footer class="page-footer"> @2023 ToySwap Inc. </footer>
       </BottomNavigation>
     </div>
   );
