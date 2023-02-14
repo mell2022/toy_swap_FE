@@ -19,9 +19,10 @@ function MyToys() {
   );
 
   let email = localStorage.getItem("authenticatedEmail");
-  console.log("From local Storage:", email);
+  // console.log("From local Storage:", email);
+  // console.log("isLoggedIn", localStorage.getItem("isLoggedIn"));
 
-  console.log("From state", authenticatedEmail);
+  // console.log("From state", authenticatedEmail);
 
   let navigate = useNavigate();
   const handleSubmit = (toy, e) => {
@@ -47,37 +48,17 @@ function MyToys() {
 
   if (userInfo.toys) {
     return (
-      // <Box sx={{ flexGrow: 1 }}>
-        // <Grid
-        //   container
-        //   spacing={6}
-        //   justifyContent="flex-start"
-        //   alignItems="flex-start"
-        // >
         <Grid
         container
         justifyContent="flex-start"
         alignItems="flex-start"
       >
-          {/* <Grid item xs={12} alignItems="left">
-            <User
-              first={userInfo.first}
-              last={userInfo.last}
-              email={userInfo.email}
-              //toys={userInfo.toys}
-            ></User>
-          </Grid> */}
           {userInfo.toys.map((toy) => (
             <Box sx={{m:2, alignContent:'flex-start'}}>
             <Grid item xs={4} alignItems="left">
             <Card sx={{ minWidth: 275, maxwidth: 250, minHeight: 275}}>
-            {/* // <Grid item xs={4} key={toy.name}>
-            //   <Card sx={{ minWidth: 275, maxwidth: 250 }}> */}
                 <CardContent key={toy.name}>
                   <Toy data={toy}></Toy>
-                  {/* <button type="submit" onClick={(e) => handleSubmit(toy, e)}>
-                Swap
-              </button> */}
                   <Button
                     variant="text"
                     onClick={(e) => handleSubmit(toy, e)}
@@ -101,6 +82,7 @@ function MyToys() {
           last={userInfo.last}
           email={userInfo.email}
           toys={userInfo.toys}
+
         ></User>
       </div>
     );

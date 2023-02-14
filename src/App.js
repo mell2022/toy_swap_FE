@@ -1,6 +1,7 @@
 import "./App.css";
 import {
   BrowserRouter as Router,
+  Link,
   NavLink,
   Route,
   Routes,
@@ -10,66 +11,28 @@ import { useState, useEffect } from "react";
 import Login from "./pages/Login";
 import MyToys from "./pages/MyToys";
 import SwapToys from "./pages/SwapToys";
-import Nav from "./components/Nav";
-import { BrowserRouter } from "react-router-dom";
+import About from "./pages/About";
 import NavTabs from "./components/NavTabs";
-// import images from "./images/Toystack.jpeg";
-// import "./App.css";
+import { BottomNavigation } from "@mui/material";
+import Logout from "./pages/Logout";
+import { positions, textAlign } from "@mui/system";
 
 function App() {
-  // const [allUsers, setAllUsers] = useState([]);
-  // const [errorMessage, setErrorMessage] = useState("");
-
-  // useEffect(() => {
-  //   axios
-  //     .get("https://toyswap.herokuapp.com/toys", {
-  //       params: {
-  //         format: "json",
-  //       },
-  //     })
-  //     .then((response) => {
-  //       // console.log("success in getting all toys!", response.data);
-  //       setAllUsers(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(`error in getting all toys! error message: ${error}`);
-  //     });
-  // }, []);
-
-  // return (
-  //   <div id="App">
-  //     <header>
-  //       <h1>Toy Swap</h1>
-  //       <section></section>
-  //     </header>
-  //     <main>
-  //       {console.log("yaaay2", allUsers)}
-  //       <UsersList users={allUsers}></UsersList>
-  //     </main>
-  //     <BrowserRouter>
-  //     <Routes>
-  //       {/* <Route path="/" element={<index />}></Route> */}
-  //       {/* <Route path="/user" element={<User />}></Route>
-  //       <Route path="/UsersList" element={<UsersList />}></Route> */}
-  //     </Routes>
-  //   </BrowserRouter>
-  //   </div>
-  // );
-
   return (
     <div className="App">
-      {/* <div> className="bg"</div> */}
       <Router>
         <NavTabs></NavTabs>
         <Routes>
           <Route path="/" element={<Login />}></Route>
           <Route path="/mytoys" element={<MyToys />}></Route>
           <Route path="/swaptoys" element={<SwapToys />}></Route>
-
-          {/* <Route path="/user" element={<User />}></Route>
-          <Route path="/userslist" element={<UsersList />}></Route> */}
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/logout" element={<Logout />}></Route>
         </Routes>
       </Router>
+      <BottomNavigation sx={{bottom:0 , alignContent:'center'}} style={{position:"fixed", bottom:0, textAlign:'center',  left:"50%" }}>
+        <footer class="page-footer"> @2023 ToySwap Inc. </footer>
+      </BottomNavigation>
     </div>
   );
 }
