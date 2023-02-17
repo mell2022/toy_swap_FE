@@ -58,7 +58,6 @@ const SwapToys = (props) => {
     console.log("their toy to swap:", theirToyToSwap);
 
     // We call the swap API between myToyToSwap and theirToyToSwap
-
     let url = `https://toyswap.herokuapp.com/toys/swap/${email}/${myToyToSwap.name}/${theirToyToSwap.owner_email}/${theirToyToSwap.name}`;
     axios
       .post(url, {

@@ -29,19 +29,6 @@ export default function Login(props) {
     setIsLoggedIn(true);
     localStorage.setItem("isLoggedIn", true);
 
-    //navigate("/mytoys");
-    // console.log("UnameOrEmail:", UnameOrEmail);
-    // console.log("password:", password);
-
-    // if (UnameOrEmail === user.email || UnameOrEmail === user.username) {
-    //   if (password === user.password) {
-    //     console.log("User Loged In");
-    //   } else {
-    //     console.log("wrong password");
-    //   }
-    // } else {
-    //   console.log("please check your username or Email");
-    // }
   };
   return (
     <Grid container justifyContent="flex-end" alignItems="center" height="100%">

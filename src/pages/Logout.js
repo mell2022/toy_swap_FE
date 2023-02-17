@@ -14,7 +14,7 @@ const Logout = () => {
     <Grid item xs/>
     <Grid item xs={6}
         >
-      <Typography variant="h6" m={5}> About</Typography>
+      <Typography variant="h6" m={5}></Typography>
       <Typography variant="subtitle1">
         You have successfully logged out. Please use the login button above to log in.
         <br/>

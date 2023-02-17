@@ -3,9 +3,6 @@ import Grid from "@mui/material/Grid";
 import { NavLink } from "react-router-dom";
 
 export default function NavList() {
-  // This styling will be applied to a <NavLink> when the
-  // route that it links to is currently selected.
-
   let activeStyle = {
     textDecoration: "underline",
   };

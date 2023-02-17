@@ -15,8 +15,6 @@ const Toy = (props) => {
         </Typography>
         <Typography variant="body2" gutterBottom>{toy.type}</Typography>
         <Typography variant="body2" gutterBottom>by: {toy.brand}</Typography>
-        {/* <Typography variant="body1" gutterBottom> Owner: {toy.owner_first} {toy.owner_last}</Typography> */}
-        {/* <Typography variant="body1" gutterBottom> Email: {toy.owner_email}</Typography> */}
         <img src={toy.imageurl} alt={toy.name} width="100" height="auto"></img>
         <Accordion sx={{ boxShadow: 0 }}>
         <AccordionSummary

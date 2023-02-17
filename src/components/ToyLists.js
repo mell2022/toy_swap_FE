@@ -3,7 +3,6 @@ import { useState } from "react";
 import axios from "axios";
 
 const ToyLists = () => {
-  // const [users, setUsers] = useState([])
   let toys = [];
   useEffect(() => {
     axios
@@ -14,20 +13,8 @@ const ToyLists = () => {
       })
       .then((response) => {
         toys = response.data;
-        // const userToys = response.data.map((user)=> {
-        //   return {
-        //     first:user.first,
-        //     last:user.last,
-        //     email:user.email,
-        //     toys:user.toys
-
-        //   }
-        // })
-        // setUsers(userToys)
         console.log(response.data);
-        // toys = response.data
         console.log("success in getting all toys!", response);
-        // return response.data;
       })
       .catch((error) => {
         console.log(`error in getting all toys! error message: ${error}`);
@@ -37,7 +24,6 @@ const ToyLists = () => {
   return (
     <div>
       <h1>My toys</h1>
-      {/* {toys} */}
       <div>
         {toys.map((toy) => (
           <div>

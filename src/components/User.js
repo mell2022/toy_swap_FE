@@ -37,11 +37,6 @@ const User = (props) => {
             {user.email}
           </Typography>
           <div>
-            {/* {user.toys.map((toy) => (
-              <div>
-                <Toy data={toy}></Toy>
-              </div>
-            ))} */}
           </div>
         </section>
       </div>

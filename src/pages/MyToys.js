@@ -19,11 +19,6 @@ function MyToys() {
   );
 
   let email = localStorage.getItem("authenticatedEmail");
-  // console.log("From local Storage:", email);
-  // console.log("isLoggedIn", localStorage.getItem("isLoggedIn"));
-
-  // console.log("From state", authenticatedEmail);
-
   let navigate = useNavigate();
   const handleSubmit = (toy, e) => {
     e.preventDefault();
@@ -72,7 +67,6 @@ function MyToys() {
             </Box>
           ))}
         </Grid>
-      // </Box>
     );
   } else {
     return (
